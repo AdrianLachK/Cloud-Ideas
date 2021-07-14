@@ -1,0 +1,18 @@
+<h1>Quotes</h1>
+
+<% if @quote.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@quote.errors.count, "error") %> stopped this from going on </h2>
+
+    <ul>
+      <% @quote.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: @quote do |f|%>
+  <%= f.text_field :label %>
+  <%= f.submit 'Add' %>
+<% end %>

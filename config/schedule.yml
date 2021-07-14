@@ -1,0 +1,4 @@
+generate_and_send_email:
+  cron: "*/2 * * * *"
+  class: "GenerateAndSendEmailJob"
+  queue: default

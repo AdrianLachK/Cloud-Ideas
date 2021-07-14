@@ -1,0 +1,14 @@
+<h1>All quotes</h1>
+
+<ul>
+  <% @quotes.each do |quotes| %>
+    <li>
+      <%= quotes.label %> score: <%= quotes.score %>
+    </li>
+  <% end %>
+</ul>
+
+<%= image_tag "test.png" %>
+
+
+

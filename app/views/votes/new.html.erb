@@ -1,0 +1,16 @@
+
+<%= form_with model:@vote_form_left, url: votes_path do |f|%>
+  <h2><%= @vote_form_left.preferred_vote_label %>></h2>
+  <%= f.hidden_field :preferred_quote_id %>
+  <%= f.hidden_field :other_quote_id %>
+  <%= f.submit "This one" %>
+<% end %>
+
+<%= form_with model:@vote_form_right, url: votes_path do |f|%>
+  <h2><%= @vote_form_right.preferred_vote_label %>></h2>
+  <%= f.hidden_field :preferred_quote_id %>
+  <%= f.hidden_field :other_quote_id %>
+  <%= f.submit "This one" %>
+<% end %>
+
+<h2> klimknąłeś <%= @clicks %></h2>
