@@ -4,10 +4,8 @@ Rails.application.routes.draw do
   require 'sidekiq/cron/web'
 
   Rails.application.routes.draw do
-  devise_for :users
     mount Sidekiq::Web => '/sidekiq'
   end
-
 
   resources :quotes, only: [:new, :create]
   resources :votes, only: [:new, :create]
