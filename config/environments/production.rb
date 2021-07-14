@@ -2,6 +2,8 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  #
+  config.serve_static_assets = false
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -14,7 +16,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local       = true
   config.action_controller.perform_caching = true
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]

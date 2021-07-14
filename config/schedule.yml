@@ -1,4 +1,9 @@
 generate_and_send_email:
-  cron: "*/2 * * * *"
+  cron: "*/3 * * * *"
   class: "GenerateAndSendEmailJob"
+  queue: default
+
+generate_image:
+  cron: "*/2 * * * *"
+  class: "GenerateImageJob"
   queue: default
