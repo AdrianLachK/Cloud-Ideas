@@ -14,5 +14,12 @@
 
 <%= form_with model: @quote do |f|%>
   <%= f.text_field :label %>
+  <div>
+    <%= f.text_field :user_id,
+                     id: :quote_user_id,
+                     value: current_user.id
+
+    %>
+  </div>
   <%= f.submit 'Add' %>
 <% end %>

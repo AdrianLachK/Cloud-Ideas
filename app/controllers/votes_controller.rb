@@ -1,7 +1,5 @@
 class VotesController < ApplicationController
 
-  before_action :authenticate_user!
-
   def new
     return redirect_to root_path if Quote.count < 2
     return redirect_to root_path if (cookies[:clicks].to_i + 1) > 10

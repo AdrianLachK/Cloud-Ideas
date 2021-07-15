@@ -1,7 +1,4 @@
 class QuotesController < ApplicationController
-
-  before_action :authenticate_user!
-
   def new
     @quote = Quote.new
   end
