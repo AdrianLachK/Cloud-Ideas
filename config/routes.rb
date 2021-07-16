@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
-  resources :quotes, only: [:new, :create]
+  resources :quotes, only: [:new, :create, :destroy]
   resources :votes, only: [:new, :create]
   resources :mailer, only: [:new]
 
