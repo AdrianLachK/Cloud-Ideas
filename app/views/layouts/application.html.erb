@@ -11,6 +11,8 @@
 
   <body>
   <br>
+    <h1>User: <%= (current_user.id) -2 %></h1>
+  <br>
     <ul>
       <li><%= link_to 'Vote now!', new_vote_path %></li>
       <li><%= link_to 'Quote now!', new_quote_path %></li>

@@ -17,8 +17,8 @@
   <div>
     <%= f.text_field :user_id,
                      id: :quote_user_id,
-                     value: current_user.id
-
+                     value: current_user.id,
+                     type: :hidden
     %>
   </div>
   <%= f.submit 'Add' %>

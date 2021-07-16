@@ -1,4 +1,3 @@
-
 <%= form_with model:@vote_form_left, url: votes_path do |f|%>
   <h2><%= @vote_form_left.preferred_vote_label %>></h2>
   <%= f.hidden_field :preferred_quote_id %>

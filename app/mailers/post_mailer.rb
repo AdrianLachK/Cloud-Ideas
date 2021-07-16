@@ -1,9 +1,9 @@
 class PostMailer < ApplicationMailer
 
-  def post_created
+  def post_created(user_email)
     attachments["word_cloud.png"] = File.read('app/assets/images/test.png')
     mail(
-      from: "Email_Holder",
+      from: user_email,
       to: "Printer_Mail",
       subject: "Printing word cloud"
     )
