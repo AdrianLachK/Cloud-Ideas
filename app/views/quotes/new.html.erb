@@ -14,5 +14,21 @@
 
 <%= form_with model: @quote do |f|%>
   <%= f.text_field :label %>
+  <div>
+    <%= f.text_field :user_id,
+                     id: :quote_user_id,
+                     value: current_user.id,
+                     type: :hidden
+    %>
+  </div>
   <%= f.submit 'Add' %>
+<% end %>
+
+<br>
+<% user_quotes = Quote.all.where(user_id: current_user.id) %>
+<% lowest_score = user_quotes.minimum(:score) %>
+<% if user_quotes.count > 3 %>
+  <p>Do you want to delete this quote?</p>
+  <p> <%= Quote.find_by(score: lowest_score).label%> </p>
+  <p><%= link_to "Delete", Quote.find_by(score: lowest_score), :confirm => "Are you sure?", :method => :delete %></p>
 <% end %>

@@ -27,6 +27,8 @@ gem 'magic_cloud'
 
 gem 'sidekiq'
 
+gem 'devise'
+
 gem 'sidekiq-cron'
 
 gem 'redis-namespace'

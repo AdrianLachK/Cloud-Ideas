@@ -10,12 +10,30 @@
   </head>
 
   <body>
-
+  <br>
+    <h1>User: <%= (current_user.id) -2 %></h1>
+  <br>
     <ul>
       <li><%= link_to 'Vote now!', new_vote_path %></li>
       <li><%= link_to 'Quote now!', new_quote_path %></li>
       <li><%= link_to 'Print now!', new_mailer_path %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+        <li><%= link_to 'Sign out',  destroy_user_session_path, method: :delete%></li>
+      <% else %>
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
+        <li><%= link_to 'Sign in', new_user_session_path %></li>
+      <% end %>
     </ul>
+
+
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
